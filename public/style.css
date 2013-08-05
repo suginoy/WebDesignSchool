@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+
+/*------------------------------------------------------------*/
+/*リセットCSS*/
+/*------------------------------------------------------------*/
+/*余白系ゼロ*/
+body,h1,h2,h3,h4,h5,h6,h7,p,ul,ol,li{
+	margin:0;
+	padding:0;
+}
+
+
+/*ページ内で使用される基本装飾*/
+body{
+	color:#333;					/*基本文字色*/
+	line-height:1.5;			/*基本行間　※単位は付けない*/
+	font-family: sans-serif;	/*基本フォント*/
+}
+
+
+/*画像周りのリセット*/
+img{
+	vertical-align:bottom; /* HTML5化したときに縦サイズがおかしいタグ(中身が画像1個の場合)にline-height:1;を付ける */
+}
+a img{
+	border:none;
+}
+
+
+
+/*基本構造*/
+#header,
+#contents,
+#footer{
+	display:block;
+	position:relative;
+	clear:both;
+}
+
+
+
+/*------------------------------------------------------------*/
+/*リンク色*/
+/*------------------------------------------------------------*/
+a img:hover{
+	opacity:0.5;
+}
+
+
+/* 基本リンク */
+a:link{
+}
+
+a:visited {
+}
+
+a:hover{
+}
+
+a:active{
+}
+
+/* #sect_event 内リンク */
+#sect_event a:link{
+	color:#333333;
+	font-weight:bold; /* ホントは :link だけにあればいい */
+	text-decoration:underline; /* 初心者は初期値を書いておいてもいい */
+}
+
+#sect_event a:visited {
+	color:#888888;
+	font-weight:bold; /* ホントは :link だけにあればいい */
+	text-decoration:underline; /* 初心者は初期値を書いておいてもいい */
+}
+
+#sect_event a:hover,
+#sect_event a:active{
+	color:#FF854B; /* EVENTの色から彩度だけ変えた */
+	font-weight:bold; /* ホントは :link だけにあればいい */
+	text-decoration:none;
+}
+
+/*------------------------------------------------------------*/
+/*メインレイアウト*/
+/*------------------------------------------------------------*/
+body{
+	/*画像複数設定の場合　上に書いたものがレイヤーのように上にくる。背景色も独立させないとうまく動かない*/
+	background:
+		url(images/body_bgXY.png),							/*カンマで区切る*/
+		url(images/body_bg.jpg) no-repeat center top fixed,	/*カンマで区切る*/
+		#fbf9ed;										/*背景色は単発最後*/
+	font-size:14px;
+}
+
+
+
+#wrapper{
+	width:960px;
+	margin:0 auto;
+}
+#header{
+	height:300px;
+}
+#contents{
+	margin-bottom:20px;
+	
+}
+#footer{
+	/*line-height: TODO */
+	background-color:#271a0b;
+	border-radius:4px 4px 0 0;
+	color:#FFF;
+	text-align:center;	
+}
+
+
+
+/*------------------------------------------------------------*/
+/*header*/
+/*------------------------------------------------------------*/
+#header h1{
+	position:absolute;
+	left:437px;
+	top:20px;
+}
+
+
+/*------------------------------------------------------------*/
+/*contents*/
+/*------------------------------------------------------------*/
+.add_bgCbR{
+	/*background-color:rgba(赤, 緑, 青, 透明度); */
+	background-color:rgba(255, 255, 255, 0.9);
+	border-radius:4px;
+}
+
+
+#contents_main{
+	width:710px;
+	float:right;
+	padding:20px;
+}
+
+#contents_main section{
+	position:relative;
+	margin-bottom:20px;
+}
+
+#contents_main section:last-child {
+	margin-bottom:0;
+}
+
+
+/*------------------------------*/
+#sect_lead{
+	/* background-color:#F00; */
+	padding-left:260px;
+	position:relative; /* TODO: */
+	min-height:165px;
+}
+
+#sect_lead h1{	/* imgよりh1に付けるべき */
+	line-height:1;
+	margin-bottom:10px;
+}
+
+#sect_lead > p > img{ /* 極力 id 付けないでやってみた */
+	position:absolute;
+	left:0px; /* position:relative;で座標をしていしない方法もあるがそれは上級 */
+	top:0px;
+}
+
+/*------------------------------*/
+/* #contents_main section{ */
+.sect_ptn_outer{
+	background-color:#FFF;
+	margin-bottom:20px;
+	border:1px solid #cccccc;
+	padding:5px;
+	position:relative;
+}
+
+/* #contents_main section:last-child{ */
+.sect_ptn_outer section:last-child{
+	margin-bottom:0;
+}
+
+/*------------------------------*/
+/* #contents_main .sect_ptn{ */
+.sect_ptn_outer .sect_ptn{
+	background:url(images/dot_bgXY.png);
+	padding:48px 34px 34px;
+}
+
+
+/* #contents_main .sect_ptn h1{ */
+.sect_ptn_outer .sect_ptn h1{
+	position: absolute;
+	left: -11px;
+	top: 9px;
+}
+
+
+/* #contents_main .sect_ptn table{ */
+.sect_ptn_outer .sect_ptn table{
+	width:100%;
+	border-collapse:collapse;
+}
+
+/*#contents_main .sect_ptn table th{ */
+.sect_ptn_outer .sect_ptn table th{
+	display:none;
+}
+/* #contents_main .sect_ptn table td.tdLeft{ */
+.sect_ptn_outer .sect_ptn table td.tdLeft{
+	width:120px;
+}
+
+
+/*------------------------------*/
+#sect_event .sect_ptn{
+	background-color:#f9dfd5;
+}
+
+
+
+/*------------------------------*/
+#sect_access .sect_ptn{
+	background-color:#d1eaf7;
+	height:69px;	
+}
+#sect_access .sect_ptn p{
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+
+
+
+
+
+
+/*------------------------------*/
+#contents_sub{
+	width:200px;
+	float:left;
+}
+
+ul#sideNav_id{
+	list-style:none;
+	padding:20px;
+	text-align:center;
+}
+ul#sideNav_id > li{
+	margin-bottom:40px;
+}
+ul#sideNav_id > li:last-child{
+	margin-bottom:0;
+}
+
+
+
+
+/*------------------------------------------------------------*/
+/*footer*/
+/*------------------------------------------------------------*/
+/*#footer{
+	background-color:#271a0b;
+	border-radius:4px 4px 0 0;
+	color:#FFF;
+	text-align:center;
+	
+} 上に移動 */
+
+
+
+/*------------------------------------------------------------*/
+/*追加上書きclass*/
+/*------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------*/
